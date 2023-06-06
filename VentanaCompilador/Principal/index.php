@@ -1,16 +1,13 @@
-<?php 
-
-    require_once 'conexion.php';
-    $conn = Conn::Conectarse();
-    session_start();
-
-?>
-
 <!DOCTYPE html><html lang="en">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head><meta charset="utf-8"/>
-<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=function(){var e=0,i=0,t=[],n=!1,o=[],s=[],r=!0,a=function(e,i,n,o,s,r,a){var l=arguments.length>7&&void 0!==arguments[7]?arguments[7]:window,c=this;this.name=e,this.funcName=i,this.parameters=null===n?null:p(n)?n:[n],this.isBlock=o,this.blockedBy=s,this.deleteWhenComplete=r,this.isError=!1,this.isComplete=!1,this.isInitialized=!1,this.proceedIfError=a,this.fWindow=l,this.isTimeDelay=!1,this.process=function(){f("... func = "+e),c.isInitialized=!0,c.isComplete=!0,f("... func.apply: "+e);var i=c.funcName.split("."),n=null,o=this.fWindow||window;i.length>3||(n=3===i.length?o[i[0]][i[1]][i[2]]:2===i.length?o[i[0]][i[1]]:o[c.funcName]),null!=n&&n.apply(null,this.parameters),!0===c.deleteWhenComplete&&delete t[e],!0===c.isBlock&&(f("----- F'D: "+c.name),u())}},l=function(e,i,t,n,o,s,r){var a=arguments.length>7&&void 0!==arguments[7]?arguments[7]:window,l=this;this.name=e,this.path=i,this.async=o,this.defer=s,this.isBlock=t,this.blockedBy=n,this.isInitialized=!1,this.isError=!1,this.isComplete=!1,this.proceedIfError=r,this.fWindow=a,this.isTimeDelay=!1,this.isPath=function(e){return"/"===e[0]&&"/"!==e[1]},this.getSrc=function(e){return void 0!==window.__ezScriptHost&&this.isPath(e)?window.__ezScriptHost+e:e},this.process=function(){l.isInitialized=!0,f("... file = "+e);var i=this.fWindow?this.fWindow.document:document,t=i.createElement("script");t.src=this.getSrc(this.path),!0===o?t.async=!0:!0===s&&(t.defer=!0),t.onerror=function(){f("----- ERR'D: "+l.name),l.isError=!0,!0===l.isBlock&&u()},t.onreadystatechange=t.onload=function(){var e=t.readyState;f("----- F'D: "+l.name),e&&!/loaded|complete/.test(e)||(l.isComplete=!0,!0===l.isBlock&&u())},i.getElementsByTagName("head")[0].appendChild(t)}},c=function(e,i){this.name=e,this.path="",this.async=!1,this.defer=!1,this.isBlock=!1,this.blockedBy=[],this.isInitialized=!0,this.isError=!1,this.isComplete=i,this.proceedIfError=!1,this.isTimeDelay=!1,this.process=function(){}};function d(e){!0!==h(e)&&0!=r&&e.process()}function h(e){if(!0===e.isTimeDelay&&!1===n)return f(e.name+" blocked = TIME DELAY!"),!0;if(p(e.blockedBy))for(var i=0;i<e.blockedBy.length;i++){var o=e.blockedBy[i];if(!1===t.hasOwnProperty(o))return f(e.name+" blocked = "+o),!0;if(!0===e.proceedIfError&&!0===t[o].isError)return!1;if(!1===t[o].isComplete)return f(e.name+" blocked = "+o),!0}return!1}function f(e){var i=window.location.href,t=new RegExp("[?&]ezq=([^&#]*)","i").exec(i);"1"===(t?t[1]:null)&&console.debug(e)}function u(){++e>200||(f("let's go"),m(o),m(s))}function m(e){for(var i in e)if(!1!==e.hasOwnProperty(i)){var t=e[i];!0===t.isComplete||h(t)||!0===t.isInitialized||!0===t.isError?!0===t.isError?f(t.name+": error"):!0===t.isComplete?f(t.name+": complete already"):!0===t.isInitialized&&f(t.name+": initialized already"):t.process()}}function p(e){return"[object Array]"==Object.prototype.toString.call(e)}return window.addEventListener("load",(function(){setTimeout((function(){n=!0,f("TDELAY -----"),u()}),5e3)}),!1),{addFile:function(e,i,n,r,a,c,h,f,u){var m=new l(e,i,n,r,a,c,h,u);!0===f?o[e]=m:s[e]=m,t[e]=m,d(m)},addDelayFile:function(e,i){var n=new l(e,i,!1,[],!1,!1,!0);n.isTimeDelay=!0,f(e+" ...  FILE! TDELAY"),s[e]=n,t[e]=n,d(n)},addFunc:function(e,n,r,l,c,h,f,u,m,p){!0===h&&(e=e+"_"+i++);var y=new a(e,n,r,l,c,f,u,p);!0===m?o[e]=y:s[e]=y,t[e]=y,d(y)},addDelayFunc:function(e,i,n){var o=new a(e,i,n,!1,[],!0,!0);o.isTimeDelay=!0,f(e+" ...  FUNCTION! TDELAY"),s[e]=o,t[e]=o,d(o)},items:t,processAll:u,setallowLoad:function(e){r=e},markLoaded:function(e){if(e&&0!==e.length){if(e in t){var i=t[e];!0===i.isComplete?f(i.name+" "+e+": error loaded duplicate"):(i.isComplete=!0,i.isInitialized=!0)}else t[e]=new c(e,!0);f("markLoaded dummyfile: "+t[e].name)}},logWhatsBlocked:function(){for(var e in t)!1!==t.hasOwnProperty(e)&&h(t[e])}}}();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('detroitchicago/boise.js', 'detroitchicago/boise420f.js?gcb=195-0&amp;cb=2', true, [], true, false, true, false);__ez.queue.addFile('detroitchicago/memphis.js', 'detroitchicago/memphisd472.js?gcb=195-0&amp;cb=23', true, [], true, false, true, false);__ez.queue.addFile('detroitchicago/minneapolis.js', 'detroitchicago/minneapolis453e.js?gcb=195-0&amp;cb=4', true, [], true, false, true, false);__ez.queue.addFile('detroitchicago/rochester.js', 'detroitchicago/rochester9620.js?gcb=195-0&amp;cb=13', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolis.js'], true, false, true, false);!function(){var e;__ez.vep=(e=[],{Add:function(i,t){__ez.dot.isDefined(i)&&__ez.dot.isValid(t)&&e.push({type:"video",video_impression_id:i,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(t)})},Fire:function(){if(void 0===document.visibilityState||"prerender"!==document.visibilityState){if(__ez.dot.isDefined(e)&&e.length>0)for(;e.length>0;){var i=5;i>e.length&&(i=e.length);var t=e.splice(0,i),o=__ez.dot.getURL("detroitchicago/grapefruit.html")+"?orig="+(!0===__ez.template.isOrig?1:0)+"&v="+btoa(JSON.stringify(t));__ez.dot.Fire(o)}e=[]}}})}();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>!function(){function e(i){return e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e(i)}__ez.pel=function(){var i=[];function t(t,o,d,_,n,r,a,s){if(__ez.dot.isDefined(t)&&0!=__ez.dot.isAnyDefined(t.getSlotElementId,t.ElementId)){void 0===s&&(s=!1);var p=parseInt(__ez.dot.getTargeting(t,"ap")),f=__ez.dot.getSlotIID(t),u=__ez.dot.getAdUnit(t,s),z=parseInt(__ez.dot.getTargeting(t,"compid")),g=0,c=0,l=function(i){if("undefined"==typeof _ezim_d)return!1;var t=__ez.dot.getAdUnitPath(i).split("index.html").pop();if("object"===("undefined"==typeof _ezim_d?"undefined":e(_ezim_d))&&_ezim_d.hasOwnProperty(t))return _ezim_d[t];for(var o in _ezim_d)if(o.split("index.html").pop()===t)return _ezim_d[o];return!1}(t);"object"==e(l)&&(void 0!==l.creative_id&&(c=l.creative_id),void 0!==l.line_item_id&&(g=l.line_item_id)),__ez.dot.isDefined(f,u)&&__ez.dot.isValid(o)&&("0"===f&&!0!==s||""===u||i.push({type:"impression",impression_id:f,domain_id:__ez.dot.getDID(),unit:u,t_epoch:__ez.dot.getEpoch(0),revenue:d,est_revenue:_,ad_position:p,ad_size:"",bid_floor_filled:n,bid_floor_prev:r,stat_source_id:a,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:z,line_item_id:g,creative_id:c,data:__ez.dot.dataToStr(o),is_orig:s||__ez.template.isOrig}))}}function o(){void 0!==document.visibilityState&&"prerender"===document.visibilityState||(__ez.dot.isDefined(i)&&i.length>0&&[i.filter((function(e){return e.is_orig})),i.filter((function(e){return!e.is_orig}))].forEach((function(e){for(;e.length>0;){var i=e[0].is_orig||!1,t=5;t>e.length&&(t=e.length);var o=e.splice(0,t),d=__ez.dot.getURL("porpoiseant/army.html")+"?orig="+(!0===i?1:0)+"&sts="+btoa(JSON.stringify(o));(void 0!==window.isAmp&&isAmp||void 0!==window.ezWp&&ezWp)&&void 0!==window._ezaq&&_ezaq.hasOwnProperty("domain_id")&&(d+="&visit_uuid="+_ezaq.visit_uuid),__ez.dot.Fire(d)}})),i=[])}return{Add:t,AddAndFire:function(e,i){t(e,i,0,0,0,0,0),o()},AddAndFireOrig:function(e,i){t(e,i,0,0,0,0,0,!0),o()},AddById:function(e,t,o,d){var _=e.split("index.html");if(__ez.dot.isDefined(e)&&3===_.length&&__ez.dot.isValid(t)){var n=_[0],r={type:"impression",impression_id:_[2],domain_id:__ez.dot.getDID(),unit:n,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(t),is_orig:o||__ez.template.isOrig};void 0!==d&&(r.revenue=d),i.push(r)}},Fire:o,GetPixels:function(){return i}}}()}();__ez.queue.addFile('detroitchicago/raleigh.js', 'detroitchicago/raleigh2693.js?gcb=195-0&amp;cb=6', false, [], true, false, true, false);__ez.queue.addFile('detroitchicago/tampa.js', 'detroitchicago/tampa45f7.js?gcb=195-0&amp;cb=5', false, [], true, false, true, false);</script>
-<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('detroitchicago/tulsa.js', 'detroitchicago/tulsa1fee.js?gcb=195-0&amp;cb=7', false, [], true, false, true, false);</script>
+<?php 
+	require '../../validator.php';
+	require_once '../../conn.php'
+?>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=function(){var e=0,i=0,t=[],n=!1,o=[],s=[],r=!0,a=function(e,i,n,o,s,r,a){var l=arguments.length>7&&void 0!==arguments[7]?arguments[7]:window,c=this;this.name=e,this.funcName=i,this.parameters=null===n?null:p(n)?n:[n],this.isBlock=o,this.blockedBy=s,this.deleteWhenComplete=r,this.isError=!1,this.isComplete=!1,this.isInitialized=!1,this.proceedIfError=a,this.fWindow=l,this.isTimeDelay=!1,this.process=function(){f("... func = "+e),c.isInitialized=!0,c.isComplete=!0,f("... func.apply: "+e);var i=c.funcName.split("."),n=null,o=this.fWindow||window;i.length>3||(n=3===i.length?o[i[0]][i[1]][i[2]]:2===i.length?o[i[0]][i[1]]:o[c.funcName]),null!=n&&n.apply(null,this.parameters),!0===c.deleteWhenComplete&&delete t[e],!0===c.isBlock&&(f("----- F'D: "+c.name),u())}},l=function(e,i,t,n,o,s,r){var a=arguments.length>7&&void 0!==arguments[7]?arguments[7]:window,l=this;this.name=e,this.path=i,this.async=o,this.defer=s,this.isBlock=t,this.blockedBy=n,this.isInitialized=!1,this.isError=!1,this.isComplete=!1,this.proceedIfError=r,this.fWindow=a,this.isTimeDelay=!1,this.isPath=function(e){return"/"===e[0]&&"/"!==e[1]},this.getSrc=function(e){return void 0!==window.__ezScriptHost&&this.isPath(e)?window.__ezScriptHost+e:e},this.process=function(){l.isInitialized=!0,f("... file = "+e);var i=this.fWindow?this.fWindow.document:document,t=i.createElement("script");t.src=this.getSrc(this.path),!0===o?t.async=!0:!0===s&&(t.defer=!0),t.onerror=function(){f("----- ERR'D: "+l.name),l.isError=!0,!0===l.isBlock&&u()},t.onreadystatechange=t.onload=function(){var e=t.readyState;f("----- F'D: "+l.name),e&&!/loaded|complete/.test(e)||(l.isComplete=!0,!0===l.isBlock&&u())},i.getElementsByTagName("head")[0].appendChild(t)}},c=function(e,i){this.name=e,this.path="",this.async=!1,this.defer=!1,this.isBlock=!1,this.blockedBy=[],this.isInitialized=!0,this.isError=!1,this.isComplete=i,this.proceedIfError=!1,this.isTimeDelay=!1,this.process=function(){}};function d(e){!0!==h(e)&&0!=r&&e.process()}function h(e){if(!0===e.isTimeDelay&&!1===n)return f(e.name+" blocked = TIME DELAY!"),!0;if(p(e.blockedBy))for(var i=0;i<e.blockedBy.length;i++){var o=e.blockedBy[i];if(!1===t.hasOwnProperty(o))return f(e.name+" blocked = "+o),!0;if(!0===e.proceedIfError&&!0===t[o].isError)return!1;if(!1===t[o].isComplete)return f(e.name+" blocked = "+o),!0}return!1}function f(e){var i=window.location.href,t=new RegExp("[?&]ezq=([^&#]*)","i").exec(i);"1"===(t?t[1]:null)&&console.debug(e)}function u(){++e>200||(f("let's go"),m(o),m(s))}function m(e){for(var i in e)if(!1!==e.hasOwnProperty(i)){var t=e[i];!0===t.isComplete||h(t)||!0===t.isInitialized||!0===t.isError?!0===t.isError?f(t.name+": error"):!0===t.isComplete?f(t.name+": complete already"):!0===t.isInitialized&&f(t.name+": initialized already"):t.process()}}function p(e){return"[object Array]"==Object.prototype.toString.call(e)}return window.addEventListener("load",(function(){setTimeout((function(){n=!0,f("TDELAY -----"),u()}),5e3)}),!1),{addFile:function(e,i,n,r,a,c,h,f,u){var m=new l(e,i,n,r,a,c,h,u);!0===f?o[e]=m:s[e]=m,t[e]=m,d(m)},addDelayFile:function(e,i){var n=new l(e,i,!1,[],!1,!1,!0);n.isTimeDelay=!0,f(e+" ...  FILE! TDELAY"),s[e]=n,t[e]=n,d(n)},addFunc:function(e,n,r,l,c,h,f,u,m,p){!0===h&&(e=e+"_"+i++);var y=new a(e,n,r,l,c,f,u,p);!0===m?o[e]=y:s[e]=y,t[e]=y,d(y)},addDelayFunc:function(e,i,n){var o=new a(e,i,n,!1,[],!0,!0);o.isTimeDelay=!0,f(e+" ...  FUNCTION! TDELAY"),s[e]=o,t[e]=o,d(o)},items:t,processAll:u,setallowLoad:function(e){r=e},markLoaded:function(e){if(e&&0!==e.length){if(e in t){var i=t[e];!0===i.isComplete?f(i.name+" "+e+": error loaded duplicate"):(i.isComplete=!0,i.isInitialized=!0)}else t[e]=new c(e,!0);f("markLoaded dummyfile: "+t[e].name)}},logWhatsBlocked:function(){for(var e in t)!1!==t.hasOwnProperty(e)&&h(t[e])}}}();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('detroitchicago/boise.js', 'detroitchicago/boise420f.js?gcb=195-0&amp;cb=2', true, [], true, false, true, false);__ez.queue.addFile('detroitchicago/memphis.js', 'detroitchicago/memphisd472.js?gcb=195-0&amp;cb=23', true, [], true, false, true, false);__ez.queue.addFile('detroitchicago/minneapolis.js', 'detroitchicago/minneapolis453e.js?gcb=195-0&amp;cb=4', true, [], true, false, true, false);__ez.queue.addFile('detroitchicago/rochester.js', 'detroitchicago/rochester9620.js?gcb=195-0&amp;cb=13', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolis.js'], true, false, true, false);!function(){var e;__ez.vep=(e=[],{Add:function(i,t){__ez.dot.isDefined(i)&&__ez.dot.isValid(t)&&e.push({type:"video",video_impression_id:i,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(t)})},Fire:function(){if(void 0===document.visibilityState||"prerender"!==document.visibilityState){if(__ez.dot.isDefined(e)&&e.length>0)for(;e.length>0;){var i=5;i>e.length&&(i=e.length);var t=e.splice(0,i),o=__ez.dot.getURL("detroitchicago/grapefruit.html")+"?orig="+(!0===__ez.template.isOrig?1:0)+"&v="+btoa(JSON.stringify(t));__ez.dot.Fire(o)}e=[]}}})}();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>!function(){function e(i){return e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e(i)}__ez.pel=function(){var i=[];function t(t,o,d,_,n,r,a,s){if(__ez.dot.isDefined(t)&&0!=__ez.dot.isAnyDefined(t.getSlotElementId,t.ElementId)){void 0===s&&(s=!1);var p=parseInt(__ez.dot.getTargeting(t,"ap")),f=__ez.dot.getSlotIID(t),u=__ez.dot.getAdUnit(t,s),z=parseInt(__ez.dot.getTargeting(t,"compid")),g=0,c=0,l=function(i){if("undefined"==typeof _ezim_d)return!1;var t=__ez.dot.getAdUnitPath(i).split("index.html").pop();if("object"===("undefined"==typeof _ezim_d?"undefined":e(_ezim_d))&&_ezim_d.hasOwnProperty(t))return _ezim_d[t];for(var o in _ezim_d)if(o.split("index.html").pop()===t)return _ezim_d[o];return!1}(t);"object"==e(l)&&(void 0!==l.creative_id&&(c=l.creative_id),void 0!==l.line_item_id&&(g=l.line_item_id)),__ez.dot.isDefined(f,u)&&__ez.dot.isValid(o)&&("0"===f&&!0!==s||""===u||i.push({type:"impression",impression_id:f,domain_id:__ez.dot.getDID(),unit:u,t_epoch:__ez.dot.getEpoch(0),revenue:d,est_revenue:_,ad_position:p,ad_size:"",bid_floor_filled:n,bid_floor_prev:r,stat_source_id:a,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:z,line_item_id:g,creative_id:c,data:__ez.dot.dataToStr(o),is_orig:s||__ez.template.isOrig}))}}function o(){void 0!==document.visibilityState&&"prerender"===document.visibilityState||(__ez.dot.isDefined(i)&&i.length>0&&[i.filter((function(e){return e.is_orig})),i.filter((function(e){return!e.is_orig}))].forEach((function(e){for(;e.length>0;){var i=e[0].is_orig||!1,t=5;t>e.length&&(t=e.length);var o=e.splice(0,t),d=__ez.dot.getURL("porpoiseant/army.html")+"?orig="+(!0===i?1:0)+"&sts="+btoa(JSON.stringify(o));(void 0!==window.isAmp&&isAmp||void 0!==window.ezWp&&ezWp)&&void 0!==window._ezaq&&_ezaq.hasOwnProperty("domain_id")&&(d+="&visit_uuid="+_ezaq.visit_uuid),__ez.dot.Fire(d)}})),i=[])}return{Add:t,AddAndFire:function(e,i){t(e,i,0,0,0,0,0),o()},AddAndFireOrig:function(e,i){t(e,i,0,0,0,0,0,!0),o()},AddById:function(e,t,o,d){var _=e.split("index.html");if(__ez.dot.isDefined(e)&&3===_.length&&__ez.dot.isValid(t)){var n=_[0],r={type:"impression",impression_id:_[2],domain_id:__ez.dot.getDID(),unit:n,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(t),is_orig:o||__ez.template.isOrig};void 0!==d&&(r.revenue=d),i.push(r)}},Fire:o,GetPixels:function(){return i}}}()}();__ez.queue.addFile('detroitchicago/raleigh.js', 'detroitchicago/raleigh2693.js?gcb=195-0&amp;cb=6', false, [], true, false, true, false);__ez.queue.addFile('detroitchicago/tampa.js', 'detroitchicago/tampa45f7.js?gcb=195-0&amp;cb=5', false, [], true, false, true, false);</script>
+    <script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('detroitchicago/tulsa.js', 'detroitchicago/tulsa1fee.js?gcb=195-0&amp;cb=7', false, [], true, false, true, false);</script>
     <title>Rookiex Compilator</title>
 
     
@@ -58,77 +55,78 @@
     <script async="" src="../cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-161735093-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-161735093-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'UA-161735093-1');
-</script>
+        gtag('config', 'UA-161735093-1');
+    </script>
 
-<script data-ad-client="ca-pub-8595466052839863" async="" src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+    <script data-ad-client="ca-pub-8595466052839863" async="" src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
 
-<link rel='canonical' href='index.html' />
-<script type="text/javascript">var ezouid = "1";</script><base ><script type='text/javascript'>
-var ezoTemplate = 'old_site_gc';
-if(typeof ezouid == 'undefined')
-{
-    var ezouid = 'none';
-}
-var ezoFormfactor = '1';
-var ezo_elements_to_check = Array();
-</script><!-- START EZHEAD -->
-<script data-ezscrex="false" type='text/javascript'>
-var soc_app_id = '0';
-var did = 214055;
-var ezdomain = 'online-python.com';
-var ezoicSearchable = 1;
-</script>
-<!--{jquery}-->
-<!-- END EZHEAD -->
-<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ab_test_id":"mod1-c","ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Maracaibo","country":"VE","days_since_last_visit":-1,"domain_id":214055,"domain_test_group":20230807,"engaged_time_visit":0,"ezcache_level":2,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"01957d0d-0919-474a-455d-5b84bc0cdf08","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":35678,"response_time_orig":4,"serverid":"i-0b94bb012a02b42b1","state":"V","t_epoch":1684317913,"template_id":126,"time_on_site_visit":0,"url":"https://www.online-python.com/","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":877,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
-<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
-function create_ezolpl(pvID, rv) {
-    var d = new Date();
-    d.setTime(d.getTime() + (365*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    __ez.ck.setByCat("ezux_lpl_214055=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
-}
-function attach_ezolpl(pvID, rv) {
-    if (document.readyState === "complete") {
-        create_ezolpl(pvID, rv);
-    }
-    if(window.attachEvent) {
-        window.attachEvent("onload", create_ezolpl, pvID, rv);
-    } else {
-        if(window.onload) {
-            var curronload = window.onload;
-            var newonload = function(evt) {
-                curronload(evt);
-                create_ezolpl(pvID, rv);
-            };
-            window.onload = newonload;
-        } else {
-            window.onload = create_ezolpl.bind(null, pvID, rv);
+    <link rel='canonical' href='index.html' />
+    <script type="text/javascript">var ezouid = "1";</script><base ><script type='text/javascript'>
+        var ezoTemplate = 'old_site_gc';
+        if(typeof ezouid == 'undefined')
+        {
+            var ezouid = 'none';
         }
-    }
-}
+        var ezoFormfactor = '1';
+        var ezo_elements_to_check = Array();
+    </script><!-- START EZHEAD -->
+    <script data-ezscrex="false" type='text/javascript'>
+        var soc_app_id = '0';
+        var did = 214055;
+        var ezdomain = 'online-python.com';
+        var ezoicSearchable = 1;
+    </script>
+    <!--{jquery}-->
+    <!-- END EZHEAD -->
+    <script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ab_test_id":"mod1-c","ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Maracaibo","country":"VE","days_since_last_visit":-1,"domain_id":214055,"domain_test_group":20230807,"engaged_time_visit":0,"ezcache_level":2,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"01957d0d-0919-474a-455d-5b84bc0cdf08","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":35678,"response_time_orig":4,"serverid":"i-0b94bb012a02b42b1","state":"V","t_epoch":1684317913,"template_id":126,"time_on_site_visit":0,"url":"https://www.online-python.com/","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":877,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+    <script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+        function create_ezolpl(pvID, rv) {
+            var d = new Date();
+            d.setTime(d.getTime() + (365*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            __ez.ck.setByCat("ezux_lpl_214055=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+        }
+        function attach_ezolpl(pvID, rv) {
+            if (document.readyState === "complete") {
+                create_ezolpl(pvID, rv);
+            }
+            if(window.attachEvent) {
+                window.attachEvent("onload", create_ezolpl, pvID, rv);
+            } else {
+                if(window.onload) {
+                    var curronload = window.onload;
+                    var newonload = function(evt) {
+                        curronload(evt);
+                        create_ezolpl(pvID, rv);
+                    };
+                    window.onload = newonload;
+                } else {
+                    window.onload = create_ezolpl.bind(null, pvID, rv);
+                }
+            }
+        }
 
-__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["01957d0d-0919-474a-455d-5b84bc0cdf08", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
-</script></head>
+        __ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["01957d0d-0919-474a-455d-5b84bc0cdf08", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+    </script>
+</head>
 <body>
 <div>
-<nav class="nav navbar-top">
-    <h2 class="nav_logo">
-        <!-- <i class="fab fa-product-hunt"></i> -->
-        <a href="../../presentacion.html"><img src="rookiex.png" alt="IDE" width="160" height="136" style="margin-top: -58px"/></a>
+    <nav class="nav navbar-top">
+        <h2 class="nav_logo">
+            <!-- <i class="fab fa-product-hunt"></i> -->
+            <a href="../../student_profile.php"><img src="rookiex.png" alt="IDE" width="160" height="136" style="margin-top: -58px"/></a>
 
-        <!-- <span>Rookiex Compilator </span> -->
-    </h2>
-    <div class="addthis_inline_share_toolbox_28pb"></div> 
-</nav>
+            <!-- <span>Rookiex Compilator </span> -->
+        </h2>
+        <div class="addthis_inline_share_toolbox_28pb"></div> 
+    </nav>
 <div class="main-content d-flex">
 <div id="sidebar-left-ad">
     <!-- Ezoic - sidebar_left - sidebar -->
@@ -142,7 +140,6 @@ __ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["01957d0d-0919-474a-455d-5
     <div id="header-control">
         <div class="btn-group">
             <button type="button" class="btn btn-default btn-custom" id="open_file" onclick="openFile(dispFile)" data-toggle="tooltip" data-container="body" data-placement="right" title="Open File from Disk"><i class="fas fa-folder-open"></i></button>
-            <?php ?>
             <button type="button" class="btn btn-default btn-custom" onclick="save_code_modal()" id="save_file" data-toggle="tooltip" data-container="body" data-placement="right" title="Save File to Disk - F9"><i class="fas fa-save"></i></button>
             <!-- <button type="button" class="btn btn-default btn-custom" onclick="share_code_modal()" data-toggle="tooltip" data-container="body" data-placement="right" title="Share Code - F10"><i class="fas fa-share-alt"></i></button> -->
             <button type="button" class="btn btn-default btn-custom" id="undo-editor" data-toggle="tooltip" data-container="body" data-placement="right" title="Undo / Crtl+z"><i class="fas fa-undo-alt"></i></button>
@@ -211,7 +208,7 @@ __ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["01957d0d-0919-474a-455d-5
     <!-- End Ezoic - below_terminal - under_page_title -->
 
     
-<p id="footer">© 2023 Rookiex Compilator | <a href="../../presentacion.html">Acerca De</a> | <a href="../../registrar-usuario.html">Registrate</a> | <a href="../../login.html" >Ingresa</a></p>
+<p id="footer">© 2023 Rookiex Compilator | <a href="../../student_profile.php">Volver al Perfil</a>
 </div>
 <div id="sidebar-right-ad">
     <!-- Ezoic - sidebar_right - sidebar -->
@@ -394,7 +391,47 @@ __ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["01957d0d-0919-474a-455d-5
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
+<div class="col-md-4">
+    <?php
+        $query = mysqli_query($conn, "SELECT * FROM `student` WHERE `stud_id` = '$_SESSION[student]'") or die(mysqli_error());
+        $fetch = mysqli_fetch_array($query);
+    ?>
+    <div class="panel panel-default" style="background-color:#000066;" id="panel-margin">
+        <div class="panel-heading" style="background-color:#000066;">
+            <center><h1 class="panel-title" style="color:#fff;">Perfil del Usuario</h1></center>
+        </div>
+        <div class="panel-body">
+            <h4 style="color:#fff;">Usuario: <label class="pull-right"><?php echo $fetch['stud_no']?></label></h4>
+            <h4 style="color:#fff;">Correo: <label class="pull-right"><?php echo $fetch['firstname']." ".$fetch['lastname']?></label></h4>
+            <h3 style="color:#fff;">Carga de Archivo</h3>
+            <form method="POST" enctype="multipart/form-data" action="../../save_file.php">
+                <input type="file" name="file" size="4" style="background-color:#fff;" required="required" />
+                <br />
+                <input type="hidden" name="stud_no" value="<?php echo $fetch['stud_no']?>"/>
+                <button class="btn btn-success btn-sm" name="save"><span class="glyphicon glyphicon-plus"></span> Agregar Archivo</button>
+            </form>
+            <br style="clear:both;"/>
+            <hr style="border-top:1px solid #fff;"/>
+            <button class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal_confirm"><span class="glyphicon glyphicon-log-out"></span> Salir</button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal_confirm" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Sistema</h3>
+				</div>
+				<div class="modal-body">
+					<center><h4 class="text-danger">¿Estás seguro de que quieres cerrar sesión?</h4></center>
+				</div>
+				<div class="modal-footer">
+					<a type="button" class="btn btn-success" data-dismiss="modal">Cancelar</a>
+					<a href="../../logout.php" class="btn btn-danger">Continuar</a>
+				</div>
+			</div>
+		</div>
+</div>
 <script type="text/javascript">
     ace.require("ace/ext/language_tools");
     var editor = ace.edit("editor");
@@ -402,7 +439,18 @@ __ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["01957d0d-0919-474a-455d-5
     var editor_cnt = 1, editor_index = 1, active_editor = 1, editor_session = [];
     var request, init_ts, open_file_name;
     var lang = 'python3';
-    default_content = "print('hola mundo')";
+    default_content = "\
+\n\
+# Rookiex Compilator\n\
+\n\
+def sum(a, b):\n\
+    return (a + b)\n\
+\n\
+a = int(input('Enter 1st number: '))\n\
+b = int(input('Enter 2nd number: '))\n\
+\n\
+print(f'Sum of {a} and {b} is {sum(a, b)}')\n\
+";
     var prev_result = 'in'; 
     var site_url = "index.html"
     var base_url = "index.html"

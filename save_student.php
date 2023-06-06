@@ -1,5 +1,5 @@
 <?php
-	require_once 'conn.php';
+	require_once 'admin/conn.php';
 	
 	if(ISSET($_POST['save'])){
 		$stud_no = $_POST['stud_no'];

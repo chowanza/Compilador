@@ -10,7 +10,7 @@
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top" style="background-color:#000066;">
 		<div class="container-fluid">
-			<label class="navbar-brand" id="title">Compilador Rookiex</label>
+			<a href="./presentacion.html"><label class="navbar-brand" id="title">Compilador Rookiex</label></a>
 		</div>
 	</nav>
 	<?php include 'login.php'?>

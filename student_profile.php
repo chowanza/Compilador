@@ -16,6 +16,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top" style="background-color:#000066;">
 		<div class="container-fluid">
 			<label class="navbar-brand" id="title">Compilador Rookiex</label>
+			<a href="./VentanaCompilador/Principal/index.php"><label class="navbar-right navbar-brand" id="title">Ir al Compilador</label></a>
 		</div>
 	</nav>
 	<div class="col-md-4">
@@ -23,15 +24,13 @@
 			$query = mysqli_query($conn, "SELECT * FROM `student` WHERE `stud_id` = '$_SESSION[student]'") or die(mysqli_error());
 			$fetch = mysqli_fetch_array($query);
 		?>
-		<div class="panel panel-default" style="background-color:#393f4d;" id="panel-margin">
-			<div class="panel-heading" style="background-color:#feda6a;">
-				<center><h1 class="panel-title" style="color:red;">Perfil del Estudiante</h1></center>
+		<div class="panel panel-default" style="background-color:#000066;" id="panel-margin">
+			<div class="panel-heading" style="background-color:#000066;">
+				<center><h1 class="panel-title" style="color:#fff;">Perfil del Usuario</h1></center>
 			</div>
 			<div class="panel-body">
-				<h4 style="color:#fff;">Cta. Estudiante: <label class="pull-right"><?php echo $fetch['stud_no']?></label></h4>
-				<h4 style="color:#fff;">Name: <label class="pull-right"><?php echo $fetch['firstname']." ".$fetch['lastname']?></label></h4>
-				<h4 style="color:#fff;">Género: <label class="pull-right"><?php echo $fetch['gender']?></label></h4>
-				<h4 style="color:#fff;">Año & Grupo: <label class="pull-right"><?php echo $fetch['yr&sec']?></label></h4>
+				<h4 style="color:#fff;">Usuario: <label class="pull-right"><?php echo $fetch['stud_no']?></label></h4>
+				<h4 style="color:#fff;">Correo: <label class="pull-right"><?php echo $fetch['firstname']." ".$fetch['lastname']?></label></h4>
 				<h3 style="color:#fff;">Carga de Archivo</h3>
 				<form method="POST" enctype="multipart/form-data" action="save_file.php">
 					<input type="file" name="file" size="4" style="background-color:#fff;" required="required" />
@@ -78,7 +77,7 @@
 		</div>
 	</div>
 	<div id = "footer">
-		<label class = "footer-title">&copy; Copyright Fuente Web <?php echo date("Y", strtotime("+8 HOURS"))?></label>
+		<label class = "footer-title">&copy; Copyright Rookiex <?php echo date("Y", strtotime("+8 HOURS"))?></label>
 	</div>
 	<div class="modal fade" id="modal_confirm" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
