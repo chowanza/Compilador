@@ -1,0 +1,208 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rookiex</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="admin/css/normalize.css">
+    <link rel="stylesheet" href="admin/css/presentacion.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/LATEST-VERSION">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c631d0424b.js" data-auto-replace-svg="nest" crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+    <!-- Add your site or application content here -->
+    <header>
+
+        <div class="logo">
+            <img src="admin/images/rookiex.png" alt="asd">
+        </div>
+        <nav class="navegacion clearfix">
+            <ul>
+                <li><a href="./index.php"><span>Ingresa</span></a></li>
+                <li><a href="./registrar-usuario.php"><span>Regístrate</span></a></li>
+                <li><a href="#quienesSomos"></a><span>Fundadores</span></li>
+                <li><a href="#caracteristicas"></a><span>Sobre nosotros</span></li>
+            </ul>
+        </nav>
+        <div class="navegacionMobile">
+            <div class="menuBtn" onClick="toggleNav()">
+                Menu
+            </div>
+        </div>
+
+    </header>
+    <div id="mobileMenu" class="mobileMenu">
+        <div class="mobileMenuTop">
+            <div class="closeWrapper" onClick="toggleNav()">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </div>
+        </div>
+        <ul>
+            <li><a href="./index.php"><span>Ingresa</span></a></li>
+            <li><a href="./registrar-usuario.php"><span>Regístrate</span></a></li>
+            <li onClick="toggleFounders()"><a href="#quienesSomos"></a><span>Fundadores</span></li>
+            <li onClick="toggleQS()"><a href="#caracteristicas"></a><span>Sobre nosotros</span></li>
+        </ul>
+    </div>
+
+    <main id="inicio" class="contenedor-header clearfix">
+        <div class="empieza-a-programar">
+            <a class="boton" href="./VentanaCompilador/Principal/index.html ">Empieza a programar</a>
+        </div>
+    </main>
+
+    <section id="quienesSomos" class="contenedor quienes-somos clearfix">
+        <div class="contenido">
+            <div class="contenedor-contenido">
+                <h2 class="titulos">¿Quienes somos?</h2>
+                <div class="parrafo">
+                    <p>Somos un grupo de estudiantes apasionados por la programación con un proyecto en mente, un
+                        COMPILADOR.
+                        Surgió como un proyecto de curso, pero se convirtió en un proyecto personal, donde tanto
+                        individual
+                        como colectivamente llevamos a otro nivel nuestras capacidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas" class="contenedor clearfix simple-pero-eficaz">
+        <div class="contenido">
+            <h2 class="titulos centro">Simple pero eficaz</h2>
+            <div class="contenedor-contenido caracteristicas">
+                <div class="parrafo">
+                    <p><b>Rookiex Compilator</b> posee una interfaz sencilla pero agradable a la vista,
+                        y es facil de entender de modo que te concentres sólo en tus habilidades de programación.</p>
+                </div>
+            </div>
+            <div class="unete-a-nosotros">
+                <button><a href="./index.php">Únete a nosotros</a></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="creadores" class="creadores">
+        <div class="contenido">
+
+            <ul class="fundadores-org clearfix">
+                <h2 class="titulos conocer-fundadores" id="conocer-fundadores">Conoce a nuestros creadores</h2>
+                <li>
+                    <div class="fundadores">
+                        <img src="admin/images/elon musk.jpg" alt="imagen no disponible">
+                        <p>Dilan Peña</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="fundadores">
+                        <img src="admin/images/elon musk.jpg" alt="imagen no disponible">
+                        <p>José López</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="fundadores">
+                        <img src="admin/images/elon musk.jpg" alt="imagen no disponible">
+                        <p>Saraí Herrera</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="fundadores">
+                        <img src="admin/images/elon musk.jpg" alt="imagen no disponible">
+                        <p>Luis Candiales</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="fundadores">
+                        <img src="admin/images/elon musk.jpg" alt="imagen no disponible">
+                        <p>Tabata Vegas</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p class="copyright">Todos los derechos reservados Rookiex Company 2023</p>
+    </footer>
+
+
+    <script>
+        function toggleNav() {
+            var links = document.getElementById("mobileMenu");
+            if (links.style.display === "block") {
+                links.style.display = "none";
+            } else {
+                links.style.display = "block";
+            }
+        }
+
+        function toggleQS() {
+            var bandera3 = true
+            if (bandera3 == true) {
+                $('.quienes-somos').show(1000);
+                $('.quienes-somos').slideDown(1000);
+
+                bandera3 = false;
+            }
+            else {
+                $('.quienes-somos').hide(1000);
+                $('.quienes-somos').slideUp(1000);
+
+                bandera3 = true;
+            }
+        }
+
+        function toggleFounders() {
+            var bandera = true
+            if (bandera == true) {
+                $('.fundadores-org').show(1000);
+                $('.fundadores-org').slideDown(1000);
+
+                bandera = false;
+            }
+            else {
+                $('.fundadores-org').hide(1000);
+                $('.fundadores-org').slideUp(1000);
+
+                bandera = true;
+            }
+        }
+
+    </script>
+
+
+
+    <script src="admin/js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
+    <script src="admin/js/app.js"></script>
+    <script src="admin/js/jquery.js"></script>
+    <script src="admin/js/jquery.lettering.js"></script>
+    <script src="admin/js/scripts.js"></script>
+
+
+</body>
+
+<!-- <footer class="footer">
+  <div class="footerContainer">
+      <p class="copyright">© GROUP TITLE 2015</p>
+  </div>
+</footer> -->
+
+</html>
