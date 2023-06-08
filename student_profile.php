@@ -30,7 +30,7 @@
 			</div>
 			<div class="panel-body">
 				<h4 style="color:#fff;">Usuario: <label class="pull-right"><?php echo $fetch['stud_no']?></label></h4>
-				<h4 style="color:#fff;">Correo: <label class="pull-right"><?php echo $fetch['firstname']." ".$fetch['lastname']?></label></h4>
+				<h4 style="color:#fff;">Correo: <label class="pull-right"><?php echo $fetch['firstname']?></label></h4>
 				<h3 style="color:#fff;">Carga de Archivo</h3>
 				<form method="POST" enctype="multipart/form-data" action="save_file.php">
 					<input type="file" name="file" size="4" style="background-color:#fff;" required="required" />

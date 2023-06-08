@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en">
 <?php 
 	require '../../validator.php';
-	require_once '../../conn.php'
+	require_once '../../admin/conn.php'
 ?>
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -391,6 +391,7 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div class="col-md-4"></div>
 <div class="col-md-4">
     <?php
         $query = mysqli_query($conn, "SELECT * FROM `student` WHERE `stud_id` = '$_SESSION[student]'") or die(mysqli_error());
@@ -402,7 +403,7 @@
         </div>
         <div class="panel-body">
             <h4 style="color:#fff;">Usuario: <label class="pull-right"><?php echo $fetch['stud_no']?></label></h4>
-            <h4 style="color:#fff;">Correo: <label class="pull-right"><?php echo $fetch['firstname']." ".$fetch['lastname']?></label></h4>
+            <h4 style="color:#fff;">Correo: <label class="pull-right"><?php echo $fetch['firstname']?></label></h4>
             <h3 style="color:#fff;">Carga de Archivo</h3>
             <form method="POST" enctype="multipart/form-data" action="../../save_file.php">
                 <input type="file" name="file" size="4" style="background-color:#fff;" required="required" />

@@ -21,11 +21,12 @@
 			</form>
 			<div>	
 				<div class="col-md-3"></div>
-				<button class="btn btn-success" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Registrarse</button>
+				<button class="btn btn-success" data-toggle="modal" data-target="#form_modal"><span class="glyphicon glyphicon-plus"></span> Registrarse</button> <br>
+				<center><a href="OlvidoClave.html"><span>Olvidé mi contraseña</span></a></center>
 				<div class="modal fade" id="form_modal" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered">
 							<div class="modal-content">
-								<form method="POST" action="save_student.php">	
+								<form method="POST"">	
 									<div class="modal-header">
 										<h4 class="modal-title">Registrar Usuario</h4>
 									</div>
@@ -45,6 +46,7 @@
 												<label>Contraseña</label>
 												<input type="password" name="password" class="form-control" required="required"/>
 											</div>
+											<?php include 'save_student.php'?>
 										</div>
 									</div>
 									<div style="clear:both;"></div>

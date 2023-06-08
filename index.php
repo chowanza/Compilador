@@ -10,12 +10,13 @@
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top" style="background-color:#000066;">
 		<div class="container-fluid">
-			<a href="./presentacion.html"><label class="navbar-brand" id="title">Compilador Rookiex</label></a>
+			<a href="./index.html"><label class="navbar-brand" id="title">Compilador Rookiex</label></a>
 		</div>
 	</nav>
 	<?php include 'login.php'?>
 	<div id = "footer">
 		<label class = "footer-title">&copy; Copyright Rookiex <?php echo date("Y", strtotime("+8 HOURS"))?></label>
 	</div>
+
 </body>
 </html>

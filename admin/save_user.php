@@ -7,8 +7,10 @@
 		$username = $_POST['username'];
 		$password = md5($_POST['password']);
 		$status = $_POST['status'];
-		
-		mysqli_query($conn, "INSERT INTO `user` VALUES('', '$firstname', '$lastname', '$username', '$password', '$status')") or die(mysqli_error());
+		$jejeje = 'password';
+		$si = 'status';
+
+		mysqli_query($conn, "INSERT INTO user (firstname, lastname, username, $jejeje, $si) VALUES( '$firstname', '$lastname', '$username', '$password', '$status');") or die(mysqli_error());
 		
 		header('location: user.php');
 	}

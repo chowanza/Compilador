@@ -8,7 +8,7 @@
 		$stud_no = $_POST['stud_no'];
 		$password = md5($_POST['password']);
 		
-		$query = mysqli_query($conn, "SELECT * FROM `student` WHERE `stud_no` = '$stud_no' && `password` = '$password'") or die(mysqli_error());
+		$query = mysqli_query($conn, "SELECT * FROM `student` WHERE `stud_no` = '$stud_no' AND `password` = '$password'") or die(mysqli_error());
 		$fetch = mysqli_fetch_array($query);
 		$row = $query->num_rows;
 		
